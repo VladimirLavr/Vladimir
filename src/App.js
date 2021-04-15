@@ -15,10 +15,10 @@ const App = (props) => {
            <Header/>
             <Nav/>
             <div className='app-wrapper-content'>
-                <Route  path ='/Dialogs'  component={Dialogs}/>
-                <Route path ='/Cont'  component={Cont}/>
-                <Route path ='/What' component={MyPosts}/>
-                <Route path ='/post1' component={Post1}/>
+                <Route  path ='/Dialogs'  render={()=><Dialogs/>}/>
+                <Route path ='/Cont'  render={()=><Cont/>}/>
+                {/*<Route path ='/What' render={()=><MyPosts/>}/>
+                <Route path ='/post1' render={()=><Post1/>}/>*/}
 
 
             </div>
