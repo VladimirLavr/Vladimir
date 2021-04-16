@@ -9,16 +9,17 @@ import MyPosts from "./Components/Cont/MyPosts/Post/MyPosts";
 import Post1 from "./Components/Cont/MyPosts/Post/Post1";
 
 const App = (props) => {
+
     return (
         <BrowserRouter>
         <div className='app-wrapper'>
            <Header/>
             <Nav/>
             <div className='app-wrapper-content'>
-                <Route  path ='/Dialogs'  render={()=><Dialogs/>}/>
-                <Route path ='/Cont'  render={()=><Cont/>}/>
-                {/*<Route path ='/What' render={()=><MyPosts/>}/>
-                <Route path ='/post1' render={()=><Post1/>}/>*/}
+                <Route  path ='/Dialogs' render={()=><Dialogs state={props.state.DialogsPage}/>}/>
+
+                <Route path ='/Cont' render={()=><Cont state={props.state.messagePage}/>}/>
+
 
 
             </div>
