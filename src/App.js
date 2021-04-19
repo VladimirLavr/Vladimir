@@ -7,25 +7,27 @@ import Header from "./Components/header/Header";
 import {BrowserRouter,Route} from "react-router-dom";
 import MyPosts from "./Components/Cont/MyPosts/Post/MyPosts";
 import Post1 from "./Components/Cont/MyPosts/Post/Post1";
+import {addPost} from "./Redux/State";
 
 const App = (props) => {
 
     return (
-        <BrowserRouter>
+
         <div className='app-wrapper'>
            <Header/>
             <Nav/>
             <div className='app-wrapper-content'>
                 <Route  path ='/Dialogs' render={()=><Dialogs state={props.state.DialogsPage}/>}/>
 
-                <Route path ='/Cont' render={()=><Cont state={props.state.messagePage}/>}/>
+                <Route path ='/Cont' render={()=><Cont state={props.state.messagePage}
+                                                       addPost={props.addPost}/>}/>
 
 
 
             </div>
 
         </div>
-        </BrowserRouter>
+
     );
 }
 export default App;
